@@ -5,10 +5,7 @@ from datetime import datetime
 def bin_age(data_private):
         current_year = datetime.now().year
         data_private['dob'] = data_private['dob'].apply(lambda x: current_year - x.year)  # Converting DOB to age
-        bins = [0, 18, 30, 40, 50, 60, 70, 80, 90, 100]
-        labels = ['<18', '18-30', '30-40', '40-50', '50-60', '60-70', '70-80', '80-90', '90+']
-        data_private['age_group'] = pd.cut(data_private['dob'], bins=bins, labels=labels, right=False)
-        data_private.drop('dob', axis=1, inplace=True)  # Removing the original age column
+        data_private['dob'] = data_private['dob'].apply(lambda x: x - x % 10)  # Grouping ages into 10 year groups
         return data_private
 
 # 3. Transform Education
@@ -25,7 +22,7 @@ def bin_citezenship(data_private):
         data_private['citizenship'] = data_private['citizenship'].apply(lambda x: 'Other' if x != 'Denmark' else x)
         return data_private
 
-def main():
+def anonymize():
         # Load the original datasets
         file_path = 'GroupG/private_dataG.xlsx'  
         data_private = pd.read_excel(file_path)
@@ -46,6 +43,12 @@ def main():
 
         # 4. generalise citizenship
         data_private = bin_citezenship(data_private)
+        
+        return data_private
+
+def main():
+        data_private = anonymize()
+        print(data_private)
 
 if __name__ == "__main__":
         main()
