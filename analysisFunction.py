@@ -55,6 +55,43 @@ def run_analysis_a(dataPrivate:pd.DataFrame, dataPublic:pd.DataFrame, dataResult
     return data, plt
 
 
+def create_graph_b(dataPrivate:pd.DataFrame, group:str, colors:list = []):
+    # get the number of people who voted in the survey grouped by gender
+    red_votes = dataPrivate[dataPrivate['party'] == 'Red'].groupby(group).size().reset_index(name='count')
+    green_votes = dataPrivate[dataPrivate['party'] == 'Green'].groupby(group).size().reset_index(name='count')
+    invalid_votes = dataPrivate[dataPrivate['party'] == 'Invalid vote'].groupby(group).size().reset_index(name='count')
+
+    redCounts = []
+    greenCounts = []
+    invalidCounts = []
+
+    index = dataPrivate[group].unique()
+
+    for i in index:
+        total = red_votes.where(red_votes[group] == i).dropna()['count'].sum() + green_votes.where(green_votes[group] == i).dropna()['count'].sum() + invalid_votes.where(invalid_votes[group] == i).dropna()['count'].sum()
+        redCounts.append(red_votes.where(red_votes[group] == i).dropna()['count'].sum()/total * 100)
+        greenCounts.append(green_votes.where(green_votes[group] == i).dropna()['count'].sum()/total * 100)
+        invalidCounts.append(invalid_votes.where(invalid_votes[group] == i).dropna()['count'].sum()/total * 100)
+
+
+    df = pd.DataFrame({'Red': redCounts, 'Green': greenCounts, 'Invalid votes': invalidCounts}, index=index)
+
+    rot = 0 if len(index) < 5 else 90
+    if colors:
+        df.plot.bar(rot=rot, color=colors)
+    else:
+        df.plot.bar(rot=rot)
+
+
+def run_analysis_b(dataPrivate:pd.DataFrame, dataPublic:pd.DataFrame, dataResults:pd.DataFrame, plot_title):
+
+    create_graph_b(dataPrivate, "sex", ["red", "green", "orange"])
+
+    create_graph_b(dataPrivate, "education")
+    create_graph_b(dataPrivate, "dob")
+    plt.show()
+
+
 def main():
     # Load the original datasets
     file_path = 'GroupG/private_dataG.xlsx'
@@ -65,7 +102,8 @@ def main():
     data_results = pd.read_excel(file_path)
 
     data, plt = run_analysis_a(data_private, data_public, data_results, 'Red votes non-anonymised')
-    plt.show()
+    # plt.show()
+    run_analysis_b(data_private, data_public, data_results, 'Red votes non-anonymised')
 
 
 if __name__ == "__main__":
