@@ -2,13 +2,22 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-def run_analysis_a(dataPrivate:pd.DataFrame, dataPublic:pd.DataFrame, dataResults:pd.DataFrame, plot_title):
-    #make list of columns 
+def K_anonymity(dataPrivate:pd.DataFrame):
     col = dataPrivate.columns.tolist()
 
     col.remove('party')
     k_anym = dataPrivate.groupby(col).size().min(skipna=True)
+    return k_anym
 
+def l_diversity(dataPrivate:pd.DataFrame):
+    col = dataPrivate.columns.tolist()
+
+    col.remove('party')
+    l_div = dataPrivate.groupby(col)['party'].nunique().min(skipna=True)
+    
+    return l_div
+
+def run_analysis_a(dataPrivate:pd.DataFrame, dataPublic:pd.DataFrame, dataResults:pd.DataFrame, plot_title):
     #percentage red votes according to survey electronic
     totalVotesElec = dataPrivate['evote'].sum()
     evotesRed = dataPrivate['party'][dataPrivate['evote'] == 1].value_counts()['Red']/totalVotesElec
@@ -29,7 +38,6 @@ def run_analysis_a(dataPrivate:pd.DataFrame, dataPublic:pd.DataFrame, dataResult
     data = {
         'Regular votes': [votesRed, votesRedRes],
         'Electronic votes': [evotesRed, evotesRedRes],
-        'k-anonymity': k_anym
     }
     _, axs = plt.subplots(1, 2, figsize=(6, 3))
     cols = ['Regular votes', 'Electronic votes']

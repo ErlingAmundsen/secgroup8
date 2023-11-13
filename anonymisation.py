@@ -22,10 +22,7 @@ def bin_citezenship(data_private):
         data_private['citizenship'] = data_private['citizenship'].apply(lambda x: 'Other' if x != 'Denmark' else x)
         return data_private
 
-def anonymize():
-        # Load the original datasets
-        file_path = 'GroupG/private_dataG.xlsx'  
-        data_private = pd.read_excel(file_path)
+def anonymize(data_private:pd.DataFrame):
 
         # Analyzing the original k-anonymity
         original_re_identification_columns = ['name', 'sex', 'dob', 'zip', 'education', 'citizenship', 'marital_status', 'party']
