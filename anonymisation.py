@@ -5,7 +5,9 @@ from datetime import datetime
 def bin_age(data_private):
         current_year = datetime.now().year
         data_private['dob'] = data_private['dob'].apply(lambda x: current_year - x.year)  # Converting DOB to age
-        data_private['dob'] = data_private['dob'].apply(lambda x: x - x % 10)  # Grouping ages into 10 year groups
+        # data_private['dob'] = data_private['dob'].apply(lambda x: x - x % 10)  # Grouping ages into 10 year groups
+        groups = {range(18,26): '18-25', range(26,46): '26-45',range(46,61): '46-60',range(61,200): '61+' }
+        data_private.replace({'dob': groups}, inplace=True)
         return data_private
 
 # 3. Transform Education
@@ -13,7 +15,8 @@ def bin_education(data_private):
         groups = {'Not stated': 'Primary education',  
         'Bachelors programmes': 'University degree',
         'Masters programmes': 'University degree',
-        'PhD programmes': 'University degree'}
+        'PhD programmes': 'University degree',
+        'Short cycle higher education': 'University degree'}
         data_private.replace({'education': groups}, inplace=True)
         return data_private
 
@@ -52,7 +55,7 @@ def anonymize(data_private:pd.DataFrame):
 def main():
         data_frame = pd.read_excel('GroupG/private_dataG.xlsx')
         data_private = anonymize(data_frame)
-        print(data_private.shape)
+        print(data_private['education'].value_counts())
         print(data_private['evote'].sum())
         
 

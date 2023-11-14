@@ -8,6 +8,8 @@ def K_anonymity(dataPrivate:pd.DataFrame):
 
     col.remove('party')
     k_anym = dataPrivate.groupby(col).size().min(skipna=True)
+    # print where k-anonymity is 1
+    print(dataPrivate.groupby(col).size().where(dataPrivate.groupby(col).size() == 1).dropna())
     return k_anym
 
 def l_diversity(dataPrivate:pd.DataFrame):

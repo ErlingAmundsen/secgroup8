@@ -27,7 +27,8 @@ def main():
 
     print('l-diversity of original data:', data['l_diversity'])
     print('l-diversity of anonymised data:', data_anym['l_diversity'])
-
-    plt.show()
+    
+    print(data_private[data_private['education']=='Upper secondary education'])
+    # plt.show()
 if __name__ == "__main__":
     main()
