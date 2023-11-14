@@ -1,7 +1,8 @@
 #test script for statistics and privacy markers
 import pandas as pd
 import matplotlib.pyplot as plt
-
+from anonymisation import *
+import numpy as np
 def K_anonymity(dataPrivate:pd.DataFrame):
     col = dataPrivate.columns.tolist()
 
@@ -55,42 +56,64 @@ def run_analysis_a(dataPrivate:pd.DataFrame, dataPublic:pd.DataFrame, dataResult
     return data, plt
 
 
-def create_graph_b(dataPrivate:pd.DataFrame, group:str, colors:list = []):
-    # get the number of people who voted in the survey grouped by gender
-    red_votes = dataPrivate[dataPrivate['party'] == 'Red'].groupby(group).size().reset_index(name='count')
-    green_votes = dataPrivate[dataPrivate['party'] == 'Green'].groupby(group).size().reset_index(name='count')
-    invalid_votes = dataPrivate[dataPrivate['party'] == 'Invalid vote'].groupby(group).size().reset_index(name='count')
+def create_graph_b(dataPrivate:pd.DataFrame, group:str, target:str, targets:list, colors:list = [], target_labels:list = [], title:str = "Set title"):
 
-    redCounts = []
-    greenCounts = []
-    invalidCounts = []
+    # create list of dataframes with counts for each target
+    selectedItems = []
+    for t in targets:
+        selectedItems.append(dataPrivate[dataPrivate[target] == t].groupby(group).size().reset_index(name='count'))
 
-    index = dataPrivate[group].unique()
+    counts = {}
+    # create dict with empty lists for each target
+    for i in targets:
+        counts[i] = []
 
+    index = np.sort(dataPrivate[group].unique())
+
+    # fill dict with counts
+    val_sum = []
     for i in index:
-        total = red_votes.where(red_votes[group] == i).dropna()['count'].sum() + green_votes.where(green_votes[group] == i).dropna()['count'].sum() + invalid_votes.where(invalid_votes[group] == i).dropna()['count'].sum()
-        redCounts.append(red_votes.where(red_votes[group] == i).dropna()['count'].sum()/total * 100)
-        greenCounts.append(green_votes.where(green_votes[group] == i).dropna()['count'].sum()/total * 100)
-        invalidCounts.append(invalid_votes.where(invalid_votes[group] == i).dropna()['count'].sum()/total * 100)
+        s = 0
+        for j in range(len(targets)):
+            val = selectedItems[j].where(selectedItems[j][group] == i).dropna()['count'].sum()
+            counts[targets[j]].append(val)
+            s += val
+        val_sum.append(s)
 
+    # percentage
+    for i in counts:
+        counts[i] = [x / y * 100 for x, y in zip(counts[i], val_sum)]
 
-    df = pd.DataFrame({'Red': redCounts, 'Green': greenCounts, 'Invalid votes': invalidCounts}, index=index)
+    # rename keys if target_labels is given
+    if target_labels:
+        counts = dict(zip(target_labels, counts.values()))
 
+    # create dataframe from dict
+    df = pd.DataFrame(counts, index=index)
+
+    # plot dataframe
     rot = 0 if len(index) < 5 else 90
     if colors:
-        df.plot.bar(rot=rot, color=colors)
+        df.plot.bar(rot=rot, color=colors, title = title)
     else:
-        df.plot.bar(rot=rot)
+        df.plot.bar(rot=rot, title=title)
 
 
-def run_analysis_b(dataPrivate:pd.DataFrame, dataPublic:pd.DataFrame, dataResults:pd.DataFrame, plot_title):
+def run_analysis_b(dataPrivate:pd.DataFrame):
+    b_list = ["Red", "Green", "Invalid vote"]
 
-    create_graph_b(dataPrivate, "sex", ["red", "green", "orange"])
 
-    create_graph_b(dataPrivate, "education")
-    create_graph_b(dataPrivate, "dob")
+    create_graph_b(dataPrivate, "sex", "party", b_list, ["red", "green", "orange"], 'voting dist based on sex')
+    create_graph_b(dataPrivate, "education", "party", b_list, ["red", "green", "orange"],'voting dist based on education')
+    create_graph_b(dataPrivate, "dob", "party", b_list, ["red", "green", "orange"], 'voting dist based on age')
+
+    c_list = [1,0] 
+    c_label_list = ["Evote", "Regular vote"]
+    create_graph_b(dataPrivate, "sex", "evote", c_list, ["red", "green"], c_label_list, 'voting channel based on sex')
+    create_graph_b(dataPrivate, "education", "evote", c_list, ["red", "green"], c_label_list,'voting channel based on education')
+    create_graph_b(dataPrivate, "dob", "evote", c_list, ["red", "green"], c_label_list,'voting channel based on age')
+
     plt.show()
-
 
 def main():
     # Load the original datasets
@@ -103,7 +126,7 @@ def main():
 
     data, plt = run_analysis_a(data_private, data_public, data_results, 'Red votes non-anonymised')
     # plt.show()
-    run_analysis_b(data_private, data_public, data_results, 'Red votes non-anonymised')
+    run_analysis_b(anonymize(data_private))
 
 
 if __name__ == "__main__":

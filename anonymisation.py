@@ -44,8 +44,11 @@ def anonymize(data_private:pd.DataFrame):
         return data_private
 
 def main():
-        data_private = anonymize()
-        print(data_private)
+        data_frame = pd.read_excel('GroupG/private_dataG.xlsx')
+        data_private = anonymize(data_frame)
+        print(data_private.shape)
+        print(data_private['evote'].sum())
+        
 
 if __name__ == "__main__":
         main()
