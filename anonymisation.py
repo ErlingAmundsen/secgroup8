@@ -28,7 +28,15 @@ def bin_citezenship(data_private):
 def anonymize(data_private:pd.DataFrame):
 
         # Analyzing the original k-anonymity
-        original_re_identification_columns = ['name', 'sex', 'dob', 'zip', 'education', 'citizenship', 'marital_status', 'party']
+        if 'education' in data_private.columns:
+                original_re_identification_columns = ['name', 'sex', 'dob', 'zip', 'education', 'citizenship', 'marital_status', 'party']
+        else:
+                if 'party' in data_private.columns:
+                        original_re_identification_columns = ['name', 'sex', 'dob', 'zip', 'citizenship', 'marital_status', 'party']
+                else:
+                        original_re_identification_columns = ['name', 'sex', 'dob', 'zip', 'citizenship', 'marital_status']
+
+
         original_k_anonymity_groups = data_private.groupby(original_re_identification_columns).size()
         original_k_anonymity = original_k_anonymity_groups.min()
 
@@ -45,8 +53,9 @@ def anonymize(data_private:pd.DataFrame):
         # 2. Generalize Date of Birth to Age Groups
         data_private = bin_age(data_private)
 
-        # 3. Transform Education
-        data_private = bin_education(data_private)
+        # 3. Transform Education if exists
+        if 'education' in data_private.columns:
+                data_private = bin_education(data_private)
         return data_private
 
 def main():
