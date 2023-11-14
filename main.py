@@ -28,7 +28,16 @@ def main():
     print('l-diversity of original data:', data['l_diversity'])
     print('l-diversity of anonymised data:', data_anym['l_diversity'])
     
-    print(data_private[data_private['education']=='Upper secondary education'])
+    # reidentification risk
+    public_anym = anonymize(data_public)
+    re_public_anym = public_anym.groupby(["sex", "dob"]).value_counts().reset_index(name="count").drop("last_voted", axis=1).set_index(["sex", "dob"])
+
+    risk = data_private_anym.join(re_public_anym, how="left", on=["sex", "dob"])
+
+    print("avg reidentification risk", len(risk) / risk["count"].sum())
+
+
+
     # plt.show()
 if __name__ == "__main__":
     main()
