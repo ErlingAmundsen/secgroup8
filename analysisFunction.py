@@ -103,9 +103,9 @@ def run_analysis_b(dataPrivate:pd.DataFrame):
     b_list = ["Red", "Green", "Invalid vote"]
 
 
-    create_graph_b(dataPrivate, "sex", "party", b_list, ["red", "green", "orange"], 'voting dist based on sex')
-    create_graph_b(dataPrivate, "education", "party", b_list, ["red", "green", "orange"],'voting dist based on education')
-    create_graph_b(dataPrivate, "dob", "party", b_list, ["red", "green", "orange"], 'voting dist based on age')
+    create_graph_b(dataPrivate, "sex", "party", b_list, ["red", "green", "orange"], title='voting dist based on sex')
+    create_graph_b(dataPrivate, "education", "party", b_list, ["red", "green", "orange"],title='voting dist based on education')
+    create_graph_b(dataPrivate, "dob", "party", b_list, ["red", "green", "orange"], title='voting dist based on age')
 
     c_list = [1,0] 
     c_label_list = ["Evote", "Regular vote"]
