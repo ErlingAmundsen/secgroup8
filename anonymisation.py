@@ -36,17 +36,14 @@ def anonymize(data_private:pd.DataFrame):
         # remove marital_status
         data_private.drop('marital_status', axis=1, inplace=True)
         
+        # remove citizenship
+        data_private.drop('citizenship', axis=1, inplace=True)
+        
         # 2. Generalize Date of Birth to Age Groups
         data_private = bin_age(data_private)
 
         # 3. Transform Education
         data_private = bin_education(data_private)
-
-        # 4. generalise citizenship
-        data_private = bin_citezenship(data_private)
-        
-        # remove citizenship
-        data_private.drop('citizenship', axis=1, inplace=True)
         return data_private
 
 def main():
