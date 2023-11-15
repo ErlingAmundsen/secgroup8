@@ -131,8 +131,13 @@ def create_graph_b(
     # create dataframe from dict
     df = pd.DataFrame(counts, index=index)
 
+    if group == "education":
+        df.index = pd.Index(["Primary", "Secondary", "UNI", "VET", "VBT"])
+
+    print(df)
+
     # plot dataframe
-    rot = 0 if len(index) < 5 else 90
+    rot = 0  # if len(index) < 5 else 90
     if colors:
         df.plot.bar(rot=rot, color=colors, title=title, ax=ax)
     else:
@@ -142,7 +147,7 @@ def create_graph_b(
 def run_analysis_b(dataPrivate: pd.DataFrame):
     b_list = ["Red", "Green", "Invalid vote"]
 
-    fig, axes = plt.subplots(1, 3, figsize=(15, 5))
+    fig, axes = plt.subplots(1, 3, figsize=(18, 6))
 
     create_graph_b(
         dataPrivate,
@@ -172,7 +177,9 @@ def run_analysis_b(dataPrivate: pd.DataFrame):
         ax=axes[2],
     )
 
-    fig, axes = plt.subplots(1, 3, figsize=(15, 5))
+    fig.tight_layout()
+
+    fig, axes = plt.subplots(1, 3, figsize=(18, 6))
     c_list = [1, 0]
     c_label_list = ["Evote", "Regular vote"]
     create_graph_b(
@@ -180,7 +187,7 @@ def run_analysis_b(dataPrivate: pd.DataFrame):
         "sex",
         "evote",
         c_list,
-        ["red", "green"],
+        ["tab:blue", "tab:orange"],
         c_label_list,
         "voting channel based on sex",
         ax=axes[0],
@@ -190,7 +197,7 @@ def run_analysis_b(dataPrivate: pd.DataFrame):
         "education",
         "evote",
         c_list,
-        ["red", "green"],
+        ["tab:blue", "tab:orange"],
         c_label_list,
         "voting channel based on education",
         ax=axes[1],
@@ -200,12 +207,13 @@ def run_analysis_b(dataPrivate: pd.DataFrame):
         "dob",
         "evote",
         c_list,
-        ["red", "green"],
+        ["tab:blue", "tab:orange"],
         c_label_list,
         "voting channel based on age",
         ax=axes[2],
     )
 
+    fig.tight_layout()
     plt.show()
 
 
