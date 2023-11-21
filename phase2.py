@@ -89,7 +89,8 @@ def main():
         .reset_index()
     )
 
-    revealed = targets.merge(grouped, on=targetsClean.columns.tolist(), how="left")
+    revealed = targets.merge(
+        grouped, on=targetsClean.columns.tolist(), how="left")
 
     # probability of being
     revealed["prob_red"] = revealed["red"] / (
@@ -108,15 +109,34 @@ def main():
 
     print(revealed.head())
 
-    correct_identifications = revealed["most_likely"].sum()
-    sure_identifications = revealed[revealed["most_likely"] == 1].shape[0]
+    revealed["sure_identification"] = revealed["most_likely"].apply(
+        lambda x: 1 if x == 1 else 0
+    )
 
-    print(f"Surely identified {sure_identifications} out of {len(revealed)} records")
+    correct_identifications = revealed["most_likely"].sum()
+    sure_identifications = revealed["sure_identification"].sum()
+
+    def get_party(x):
+        if x["prob_red"] == x["most_likely"]:
+            return "Red"
+        elif x["prob_green"] == x["most_likely"]:
+            return "Green"
+        else:
+            return "Invalid"
+
+    revealed["party"] = revealed.apply(get_party, axis=1)
+
+    print(
+        f"Surely identified {sure_identifications} out of {len(revealed)} records")
     print(
         f"With most likely guess we identified {int(correct_identifications)} out of {len(revealed)} records"
     )
 
     revealed.to_csv("revealed.csv")
+
+    # Filter for name and party
+    handin = revealed[["name", "party", "sure_identification"]]
+    handin.to_csv("handin.csv")
 
 
 if __name__ == "__main__":
