@@ -1,0 +1,201 @@
+sex,evote,zip,education,citizenship,marital_status,party,age
+Female,1,2300,High School Education,Danish,Never married,Green,40-60
+Male,1,2400,High School Education,Danish,Married/separated,Green,40-60
+Female,1,2100,University Education,Danish,Married/separated,Green,20-40
+Female,0,2300,Vocational Education,Danish,Divorced/Widowed,Red,40-60
+Female,1,2400,Not stated,Danish,Married/separated,Red,40-60
+Male,0,2200,High School Education,Danish,Married/separated,Green,40-60
+Male,1,2400,High School Education,Non-Danish,Never married,Green,20-40
+Male,0,2400,Vocational Education,Danish,Married/separated,Red,60-80
+Female,0,2300,Vocational Education,Danish,Married/separated,Red,20-40
+Female,0,2200,Vocational Education,Danish,Married/separated,Green,40-60
+Female,0,2400,Vocational Education,Danish,Married/separated,Red,60-80
+Male,0,2400,University Education,Danish,Married/separated,Green,40-60
+Male,1,2300,Vocational Education,Danish,Married/separated,Green,40-60
+Female,0,2200,Vocational Education,Danish,Never married,Red,40-60
+Male,0,2400,High School Education,Non-Danish,Married/separated,Green,40-60
+Male,0,2300,High School Education,Danish,Never married,Red,20-40
+Male,1,2200,Vocational Education,Danish,Married/separated,Red,60-80
+Female,0,2400,Not stated,Danish,Divorced/widowed,Green,80-100
+Male,1,2300,High School Education,Non-Danish,Divorced/widowed,Green,40-60
+Male,1,2100,Vocational Education,Danish,Married/separated,Green,20-40
+Female,0,2400,Vocational Education,Danish,Never married,Red,40-60
+Female,0,2400,University Education,Danish,Married/separated,Green,60-80
+Male,0,2100,Vocational Education,Danish,Never married,Green,20-40
+Female,0,2300,University Education,Danish,Never married,Red,40-60
+Male,0,2400,Vocational Education,Danish,Never married,Green,40-60
+Female,0,2200,Vocational Education,Non-Danish,Divorced/widowed,Red,60-80
+Female,1,2100,High School Education,Danish,Married/separated,Green,40-60
+Male,1,2300,Vocational Education,Danish,Married/separated,Green,40-60
+Male,0,2300,High School Education,Danish,Never married,Green,20-40
+Female,1,2200,High School Education,Danish,Never married,Green,20-40
+Female,0,2400,University Education,Danish,Married/separated,Red,40-60
+Female,0,2200,University Education,Non-Danish,Divorced/Widowed,Red,40-60
+Male,0,2200,University Education,Danish,Married/separated,Red,60-80
+Female,1,2400,Vocational Education,Danish,Divorced/widowed,Invalid vote,60-80
+Female,0,2100,Vocational Education,Danish,Married/separated,Green,40-60
+Male,0,2300,University Education,Danish,Divorced/Widowed,Green,40-60
+Male,0,2200,High School Education,Non-Danish,Married/separated,Green,40-60
+Male,1,2400,Vocational Education,Danish,Married/separated,Green,60-80
+Male,0,2400,Vocational Education,Danish,Married/separated,Green,80-100
+Male,0,2200,Vocational Education,Danish,Divorced/Widowed,Green,60-80
+Male,1,2200,University Education,Danish,Married/separated,Green,20-40
+Female,0,2300,Vocational Education,Danish,Never married,Red,40-60
+Female,1,2400,Vocational Education,Danish,Divorced/Widowed,Red,40-60
+Male,1,2200,Vocational Education,Danish,Married/separated,Green,20-40
+Female,0,2200,Vocational Education,Danish,Never married,Green,20-40
+Male,1,2200,High School Education,Danish,Divorced/widowed,Green,40-60
+Male,0,2400,High School Education,Danish,Married/separated,Green,60-80
+Male,1,2200,Vocational Education,Danish,Married/separated,Green,20-40
+Female,0,2200,Vocational Education,Danish,Never married,Red,20-40
+Female,0,2400,Vocational Education,Danish,Never married,Green,20-40
+Male,0,2400,Vocational Education,Danish,Never married,Red,60-80
+Female,0,2400,Vocational Education,Danish,Divorced/Widowed,Green,60-80
+Female,1,2300,Vocational Education,Danish,Divorced/widowed,Red,60-80
+Male,0,2100,Vocational Education,Danish,Married/separated,Green,20-40
+Male,1,2400,Vocational Education,Danish,Married/separated,Green,40-60
+Female,0,2400,High School Education,Non-Danish,Married/separated,Red,60-80
+Female,1,2100,Vocational Education,Danish,Married/separated,Green,20-40
+Male,1,2300,Vocational Education,Danish,Never married,Green,20-40
+Male,0,2300,University Education,Danish,Never married,Green,20-40
+Male,1,2200,University Education,Danish,Married/separated,Green,40-60
+Female,0,2400,Vocational Education,Danish,Married/separated,Red,60-80
+Female,0,2200,Vocational Education,Danish,Married/separated,Red,40-60
+Male,0,2100,Vocational Education,Danish,Never married,Red,60-80
+Female,0,2300,Vocational Education,Danish,Divorced/Widowed,Red,60-80
+Female,1,2300,University Education,Danish,Married/separated,Red,60-80
+Female,0,2300,Vocational Education,Non-Danish,Never married,Red,40-60
+Female,1,2300,Vocational Education,Danish,Married/separated,Green,20-40
+Male,0,2200,High School Education,Non-Danish,Never married,Green,20-40
+Female,1,2100,High School Education,Danish,Never married,Green,20-40
+Female,0,2400,High School Education,Danish,Married/separated,Red,40-60
+Male,1,2400,University Education,Danish,Divorced/Widowed,Green,40-60
+Female,0,2400,Vocational Education,Danish,Divorced/Widowed,Green,60-80
+Female,0,2200,High School Education,Danish,Married/separated,Green,40-60
+Female,0,2200,Vocational Education,Danish,Never married,Green,20-40
+Male,0,2400,Vocational Education,Non-Danish,Married/separated,Green,40-60
+Female,1,2100,Vocational Education,Danish,Never married,Green,20-40
+Male,1,2300,Vocational Education,Danish,Never married,Green,20-40
+Female,1,2300,Not stated,Danish,Never married,Green,20-40
+Female,0,2400,Vocational Education,Danish,Divorced/Widowed,Red,40-60
+Female,1,2400,University Education,Danish,Never married,Red,40-60
+Female,0,2300,University Education,Danish,Never married,Green,20-40
+Female,0,2400,High School Education,Danish,Never married,Green,40-60
+Female,0,2300,Vocational Education,Danish,Never married,Red,40-60
+Male,0,2300,University Education,Non-Danish,Married/separated,Red,60-80
+Female,0,2300,Vocational Education,Danish,Never married,Green,40-60
+Female,0,2400,Vocational Education,Danish,Married/separated,Red,40-60
+Male,0,2100,Vocational Education,Danish,Never married,Green,40-60
+Female,0,2200,Not stated,Danish,Married/separated,Green,20-40
+Female,1,2200,Vocational Education,Non-Danish,Never married,Red,40-60
+Female,0,2200,High School Education,Danish,Never married,Green,20-40
+Female,0,2200,Vocational Education,Danish,Married/separated,Red,40-60
+Female,1,2200,Vocational Education,Danish,Married/separated,Invalid vote,20-40
+Male,0,2200,High School Education,Danish,Never married,Green,40-60
+Male,1,2400,Vocational Education,Danish,Married/separated,Red,20-40
+Male,1,2300,High School Education,Danish,Married/separated,Red,40-60
+Male,0,2400,Vocational Education,Danish,Divorced/Widowed,Green,60-80
+Female,1,2100,Vocational Education,Danish,Never married,Green,20-40
+Female,0,2200,Vocational Education,Danish,Never married,Red,60-80
+Male,0,2300,Vocational Education,Danish,Divorced/Widowed,Green,40-60
+Female,1,2100,Vocational Education,Danish,Married/separated,Green,20-40
+Female,0,2100,High School Education,Danish,Never married,Green,20-40
+Male,1,2200,University Education,Danish,Never married,Green,40-60
+Male,0,2200,Vocational Education,Danish,Married/separated,Green,60-80
+Male,0,2400,High School Education,Danish,Married/separated,Green,40-60
+Female,0,2200,Vocational Education,Danish,Never married,Green,40-60
+Female,0,2300,High School Education,Danish,Never married,Green,20-40
+Male,1,2400,University Education,Danish,Married/separated,Red,40-60
+Male,1,2300,Vocational Education,Danish,Married/separated,Green,20-40
+Male,0,2200,Vocational Education,Danish,Divorced/widowed,Green,80-100
+Female,0,2300,Not stated,Danish,Married/separated,Green,40-60
+Male,1,2100,University Education,Danish,Never married,Green,20-40
+Female,0,2400,High School Education,Non-Danish,Divorced/Widowed,Green,60-80
+Female,1,2300,Vocational Education,Danish,Married/separated,Green,20-40
+Female,0,2400,Vocational Education,Danish,Married/separated,Red,40-60
+Male,1,2300,Vocational Education,Non-Danish,Divorced/Widowed,Red,40-60
+Female,0,2300,Vocational Education,Danish,Never married,Green,20-40
+Male,0,2200,University Education,Danish,Married/separated,Green,20-40
+Female,0,2300,High School Education,Danish,Divorced/Widowed,Green,60-80
+Male,0,2200,Vocational Education,Danish,Married/separated,Green,20-40
+Female,0,2400,High School Education,Danish,Divorced/widowed,Green,80-100
+Male,1,2100,Vocational Education,Danish,Never married,Green,20-40
+Female,0,2400,High School Education,Danish,Never married,Green,60-80
+Male,0,2200,Vocational Education,Danish,Married/separated,Green,60-80
+Male,1,2300,University Education,Danish,Divorced/Widowed,Red,40-60
+Female,0,2400,High School Education,Danish,Married/separated,Green,40-60
+Female,0,2400,High School Education,Non-Danish,Never married,Red,60-80
+Male,0,2200,Vocational Education,Danish,Married/separated,Green,60-80
+Male,1,2100,Vocational Education,Non-Danish,Divorced/Widowed,Green,60-80
+Female,0,2200,Vocational Education,Danish,Married/separated,Red,60-80
+Female,0,2200,Vocational Education,Danish,Divorced/Widowed,Red,80-100
+Female,1,2300,Vocational Education,Non-Danish,Divorced/Widowed,Red,40-60
+Female,0,2200,Vocational Education,Danish,Married/separated,Red,40-60
+Female,0,2300,High School Education,Danish,Married/separated,Red,40-60
+Male,0,2400,Vocational Education,Non-Danish,Divorced/Widowed,Green,40-60
+Male,1,2400,Vocational Education,Danish,Never married,Green,20-40
+Female,0,2400,Vocational Education,Danish,Married/separated,Red,60-80
+Male,0,2200,University Education,Danish,Never married,Red,60-80
+Male,0,2400,Vocational Education,Danish,Married/separated,Red,40-60
+Female,1,2400,Vocational Education,Danish,Married/separated,Green,20-40
+Female,0,2400,High School Education,Danish,Married/separated,Red,40-60
+Female,1,2300,Vocational Education,Danish,Divorced/Widowed,Red,60-80
+Female,0,2300,University Education,Danish,Married/separated,Green,20-40
+Male,0,2200,University Education,Danish,Married/separated,Green,20-40
+Male,0,2300,Vocational Education,Danish,Divorced/Widowed,Red,80-100
+Male,0,2300,High School Education,Danish,Married/separated,Green,40-60
+Female,0,2300,Vocational Education,Danish,Never married,Red,60-80
+Male,1,2400,University Education,Danish,Married/separated,Green,20-40
+Male,1,2400,Vocational Education,Danish,Never married,Green,40-60
+Female,0,2300,Vocational Education,Danish,Divorced/Widowed,Red,40-60
+Female,0,2100,Vocational Education,Danish,Never married,Green,20-40
+Female,1,2300,High School Education,Danish,Never married,Green,20-40
+Female,0,2400,Vocational Education,Danish,Divorced/Widowed,Red,60-80
+Female,1,2300,Vocational Education,Danish,Never married,Red,20-40
+Male,1,2200,Vocational Education,Danish,Never married,Green,20-40
+Female,1,2200,High School Education,Danish,Never married,Green,0-20
+Female,0,2100,Vocational Education,Danish,Never married,Green,20-40
+Male,1,2400,High School Education,Danish,Married/separated,Green,60-80
+Male,0,2300,University Education,Danish,Never married,Red,20-40
+Female,1,2400,High School Education,Danish,Married/separated,Green,60-80
+Male,0,2100,High School Education,Danish,Never married,Green,20-40
+Male,1,2100,University Education,Danish,Never married,Green,40-60
+Male,0,2300,High School Education,Danish,Never married,Green,0-20
+Male,1,2400,Vocational Education,Danish,Married/separated,Green,40-60
+Male,1,2100,Vocational Education,Danish,Never married,Green,20-40
+Male,1,2200,High School Education,Danish,Never married,Green,20-40
+Male,0,2200,Vocational Education,Danish,Never married,Green,40-60
+Male,0,2100,Vocational Education,Danish,Never married,Green,20-40
+Male,1,2300,Vocational Education,Danish,Never married,Green,20-40
+Male,0,2100,University Education,Danish,Married/separated,Red,60-80
+Male,0,2200,Vocational Education,Danish,Married/separated,Red,80-100
+Male,1,2300,Not stated,Danish,Married/separated,Green,20-40
+Male,0,2300,Vocational Education,Danish,Married/separated,Red,40-60
+Male,0,2100,High School Education,Danish,Never married,Green,20-40
+Male,1,2400,Vocational Education,Danish,Married/separated,Green,40-60
+Female,0,2300,High School Education,Danish,Married/separated,Invalid vote,40-60
+Male,0,2100,University Education,Danish,Never married,Red,40-60
+Female,0,2400,High School Education,Danish,Married/separated,Red,40-60
+Male,1,2100,High School Education,Danish,Never married,Green,20-40
+Female,0,2100,High School Education,Danish,Never married,Green,20-40
+Female,0,2300,Vocational Education,Danish,Never married,Green,20-40
+Female,1,2100,Vocational Education,Danish,Married/separated,Green,20-40
+Female,0,2400,High School Education,Danish,Married/separated,Green,60-80
+Male,1,2200,Vocational Education,Danish,Married/separated,Green,40-60
+Female,0,2300,University Education,Danish,Married/separated,Red,40-60
+Male,1,2100,High School Education,Danish,Never married,Green,20-40
+Female,1,2100,High School Education,Danish,Never married,Green,20-40
+Male,0,2400,Vocational Education,Danish,Married/separated,Red,40-60
+Male,0,2300,Vocational Education,Non-Danish,Never married,Red,60-80
+Male,1,2400,University Education,Non-Danish,Never married,Green,20-40
+Female,0,2400,Vocational Education,Danish,Married/separated,Red,80-100
+Female,0,2200,Vocational Education,Danish,Married/separated,Red,60-80
+Female,1,2300,Vocational Education,Danish,Married/separated,Red,40-60
+Male,1,2100,Vocational Education,Danish,Never married,Green,20-40
+Male,1,2300,Vocational Education,Danish,Married/separated,Red,60-80
+Female,0,2200,Vocational Education,Danish,Never married,Green,40-60
+Male,1,2300,High School Education,Danish,Married/separated,Green,40-60
+Female,0,2300,Vocational Education,Danish,Never married,Green,20-40
+Female,0,2200,High School Education,Danish,Married/separated,Green,40-60
+Male,1,2100,Vocational Education,Non-Danish,Married/separated,Green,20-40
+Female,0,2400,Vocational Education,Danish,Never married,Green,40-60
